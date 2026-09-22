@@ -41,38 +41,20 @@ public class Ticket {
   };
 
 
-  public static String Choice(int option){
-    option = sc.nextInt();
-    switch (option){
-       case 1 : {
-        System.out.println("1.Internet issue");
-        break;
-       }
-       case 2 :{
-        System.out.println("2.Payment Issue");
-       }
-       case 3 : {
-        System.out.println("3.Login Problem");
-       }
-       case 4 :{
-        System.out.println("4. Account Blocked");
-       }
-       default : {
-        System.out.println("Tickets are completed");
-       }
-    }
-    return "";
-  }
+
+
+
   public static void main(String[] args) {
     System.out.println("Enter your name here.............");
     String customer_name = sc.nextLine();
     PriorityQueue<Ticket> t = new PriorityQueue<>(byPriority);
-    t.add(new Ticket(101, customer_name, " Internet Issue", 1));
-     t.add(new Ticket(102, customer_name, " Payment failed ", 3));
-      t.add(new Ticket(103, customer_name, " Login Problem", 2));
+   
+    t.add(new Ticket(101, customer_name, "Internet issue", 3));
+        t.add(new Ticket(103, customer_name, "Payment issue", 1));
+            t.add(new Ticket(102, customer_name, "Account login problem", 2));
       while(!t.isEmpty()){
         System.out.println(t.poll());
       }
-      Choice(0);
+      
   }
 }
